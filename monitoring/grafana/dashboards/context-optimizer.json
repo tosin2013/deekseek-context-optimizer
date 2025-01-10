@@ -1,0 +1,71 @@
+{
+  "dashboard": {
+    "title": "Context Optimizer",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "API Response Times",
+        "targets": [
+          {
+            "expr": "rate(context_optimizer_api_response_time_seconds_sum[1m]) / rate(context_optimizer_api_response_time_seconds_count[1m])",
+            "legendFormat": "{{instance}}"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Cache Hit Rate",
+        "targets": [
+          {
+            "expr": "rate(context_optimizer_cache_hits_total[1m]) / (rate(context_optimizer_cache_hits_total[1m]) + rate(context_optimizer_cache_misses_total[1m]))",
+            "legendFormat": "{{instance}}"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "Request Queue Size",
+        "targets": [
+          {
+            "expr": "context_optimizer_request_queue_size",
+            "legendFormat": "{{instance}}"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "Context Processing Time",
+        "targets": [
+          {
+            "expr": "rate(context_optimizer_context_processing_time_seconds_sum[1m]) / rate(context_optimizer_context_processing_time_seconds_count[1m])",
+            "legendFormat": "{{instance}}"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        }
+      }
+    ]
+  }
+}
