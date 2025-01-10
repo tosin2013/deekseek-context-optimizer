@@ -13,8 +13,8 @@ The Context Optimizer Server enhances context management for DeepSeek v3 API cal
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-org/context-optimizer.git
-cd context-optimizer
+git clone https://github.com/tosin2013/deekseek-context-optimizer.git
+cd deekseek-context-optimizer
 ```
 
 2. Install dependencies:
